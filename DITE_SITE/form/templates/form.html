@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Joining Form</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/form_style.css' %}">
+    </head>
+    <body>
+
+        <br>
+        <form action="." method="POST" class="FORM">{% csrf_token %}
+            <label class="LABEL">Name:</label>
+            <input type="text" name="Name" width="200px" placeholder="Rahul"/><br>
+            <label class="LABEL">Email:</label>
+            <input type="email" name="Email" width="200px" placeholder="XYZ@abc.com"/><br>
+            <label class="LABEL">Phone:</label>
+            <input type="number" name="Phone" width="150px" placeholder="0123456789"/><br>
+            <label class="LABEL">College:</label>
+            <input type="text" name="College" width="250px" height="50px" /><br>
+            <label class="LABEL">Suggestion:</label>
+            <input type="text" name="Suggestions" width="200px" height="100px" placeholder="my point.."/><br>
+            <label class="LABEL">Featured:</label>
+            <input type="checkbox" name="Featured" />
+            <input type="submit" value="Save" />
+        </form>
+    </body>
+</html>
+
+{% endblock %}
